@@ -6,8 +6,9 @@ from langchain_ollama import ChatOllama
 
 from papermate_agent import PaperMateAgent
 
-if __name__ == "__main__":
-    agent = PaperMateAgent(docs_path="/Users/assiabenhaddadi/Documents/Internship research/RAG")
+if __name__ == "__main__": 
+    #add you path directory here
+    agent = PaperMateAgent(docs_path="...")
 
     print("📄 PaperMate is ready. Ask your questions. Type 'exit' to quit.\n")
 
@@ -29,7 +30,7 @@ if __name__ == "__main__":
 
 """
 # Step 1: Load documents
-documents = SimpleDirectoryReader( input_dir="/Users/assiabenhaddadi/Documents/Internship research/RAG", recursive=True).load_data()
+documents = SimpleDirectoryReader( input_dir="....", recursive=True).load_data()
 
 # Step 2: Create embedding model
 embed_model = HuggingFaceEmbedding(model_name="all-MiniLM-L6-v2")
