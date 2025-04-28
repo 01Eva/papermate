@@ -19,6 +19,3 @@ nltk==3.8.1
 numpy==1.26.4
 torch==2.1.2
 pandas==2.2.1
-
-# System compatibility (optional if errors with latest Python)
-typing-extensions
