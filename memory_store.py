@@ -6,11 +6,11 @@ class MemoryStore:
     
 
     def reflect(self, question, answer):
-        print(f"🧠 Storing Q: {question}")
+        print(f" Storing Q: {question}")
         self.memory.append({"question": question, "answer": answer})
 
     def save(self, path):
-        print(f"💾 Saving memory to: {path}")
+        print(f" Saving memory to: {path}")
         with open(path, "w") as f:
             json.dump(self.memory, f, indent=2)
 
@@ -23,7 +23,7 @@ class MemoryStore:
 
     def recall(self):
         for i, entry in enumerate(self.memory, 1):
-            print(f"🗃 Memory {i}:")
+            print(f" Memory {i}:")
             print(f"Q: {entry['question']}")
             print(f"A: {entry['answer']}\n")
     def get_all(self):
