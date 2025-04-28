@@ -14,15 +14,15 @@ class PaperMateAgent:
         self._setup()
 
     def _setup(self):
-        print("🔄 Loading documents...")
+        print("Loading documents...")
         documents = SimpleDirectoryReader(self.docs_path, recursive=True).load_data()
         
-        print("🧠 Setting up embed model & LLM...")
+        print("Setting up embed model & LLM...")
         embed_model = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
         llm = ChatOllama(model="deepseek-r1")
         wrapped_llm = LangChainLLM(llm=llm)
 
-        print("📦 Building index...")
+        print("Building index...")
         self.index = VectorStoreIndex.from_documents(documents, embed_model=embed_model)
         self.query_engine = self.index.as_query_engine(llm=wrapped_llm)
 
@@ -45,6 +45,6 @@ class PaperMateAgent:
             print("🫙 No memory yet!")
             return
 
-        print("📚 Memory so far:")
+        print(" Memory so far:")
         for i, mem in enumerate(memories, 1):
             print(f"\n🔹 Memory {i}:\nQ: {mem['question']}\nA: {mem['answer']}")
