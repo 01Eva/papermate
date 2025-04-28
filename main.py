@@ -19,14 +19,14 @@ if __name__ == "__main__":
             break
 
         if question.lower() == "recall":
-            print("\n🗃 Memory Recall:\n")
+            print("\n Memory Recall:\n")
             agent.recall_memory()
             continue
 
         print("❓ Asking:", question)
         answer = agent.ask(question)
 
-        print("\n🧠 Final Answer:\n", answer)
+        print("\n Final Answer:\n", answer)
 
 """
 # Step 1: Load documents
